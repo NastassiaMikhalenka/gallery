@@ -9,7 +9,7 @@ const instance = axios.create({
             orientation: 'portrait',
         },
         headers: {
-            Authorization: `Client-ID REACT_APP_SECRET_API_KEY`,
+            Authorization: `Client-ID eZ0NDsW0i0IGGySF-mcADzGUONoQp3wftizZznXLf3Q`,
         },
     }
 )

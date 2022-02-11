@@ -30,6 +30,18 @@ function App() {
         })
     }, [page]);
 
+    useEffect(() => {
+        const event = (e: any): void => window.addEventListener("scroll", () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+                setPage((pagePrev: number) => {
+                    return pagePrev + 1;
+                });
+            }
+        });
+
+        return () => window.removeEventListener('scroll', event);
+    }, []);
+
     return (
         <div className="App">
             <form onSubmit={handleSubmit}>
