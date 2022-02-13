@@ -1,6 +1,7 @@
 import React, {useEffect, useState,} from 'react';
 import {APIPhotos} from "./API/Api";
 import {Photos} from "./components/Photos/Photos";
+import {Main} from "./components/Main/Main";
 
 
 function App() {
@@ -14,6 +15,11 @@ function App() {
         e.preventDefault();
         setPage(1);
     };
+    const onClickHandlerSea = (e: any) => {
+        e.preventDefault();
+        setValue('sea')
+        setPage(1);
+    }
 
     console.log(photosData)
     useEffect(() => {
@@ -29,7 +35,7 @@ function App() {
                 }
             });
         })
-    }, [page]);
+    }, [page, value]);
 
     useEffect(() => {
         const event = window.addEventListener("scroll", () => {
@@ -45,12 +51,12 @@ function App() {
 
     return (
         <div className="App">
-            <form onSubmit={handleSubmit}>
+            <form>
                 <input onChange={handleChange} type='text'/>
-                <button>Search</button>
+                <button onClick={handleSubmit}>Search</button>
             </form>
             {/*<button onClick={handleSubmitNext}>Next</button>*/}
-            <Photos photosData={photosData}/>
+            <Photos photosData={photosData} onClickHandlerSea={onClickHandlerSea}/>
         </div>
     );
 }
