@@ -1,0 +1,59 @@
+.photosContainer{
+    width: 80%;
+    margin: auto;
+}
+.photosContent{
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.containerImg{
+    display: flex;
+    align-items: center;
+    margin: 0.2rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+.containerImg >img{
+    width: 20rem;
+    height: 20rem;
+    display: block;
+    object-fit: cover;
+}
+.photoInfo {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    color: white;
+    transform: translateY(100%);
+    transition: all 0.2s linear;
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerImg:hover .photoInfo {
+    transform: translateY(0);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.photoInfo_description{
+    text-align: center;
+}
+.photoInfo_likes{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+
+}
+.photoInfo_likes img {
+    width: 20px;
+}
+
+.photoInfo_User img{
+    border-radius: 50%;
+}

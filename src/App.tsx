@@ -1,5 +1,6 @@
 import React, {useEffect, useState,} from 'react';
 import {APIPhotos} from "./API/Api";
+import {Photos} from "./components/Photos/Photos";
 
 
 function App() {
@@ -49,18 +50,7 @@ function App() {
                 <button>Search</button>
             </form>
             {/*<button onClick={handleSubmitNext}>Next</button>*/}
-
-            {
-                photosData.length !== 0
-                    ?
-                    photosData.map(img => (
-                        <>
-                            <img src={img.urls.small} alt='img'/>
-                        </>
-                    )
-                )
-                    : <div>dd</div>
-            }
+            <Photos photosData={photosData}/>
         </div>
     );
 }
