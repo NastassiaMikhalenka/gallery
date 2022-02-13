@@ -31,14 +31,14 @@ function App() {
     }, [page]);
 
     useEffect(() => {
-        const event = (e: any): void => window.addEventListener("scroll", () => {
-            if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+        const event = window.addEventListener("scroll", () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight - 2) {
                 setPage((pagePrev: number) => {
                     return pagePrev + 1;
                 });
             }
         });
-
+        // @ts-ignore
         return () => window.removeEventListener('scroll', event);
     }, []);
 
