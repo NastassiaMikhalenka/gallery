@@ -4,7 +4,6 @@ import {Main} from "../Main/Main";
 
 type PropsType = {
     photosData: Array<photoType>
-    onClickHandlerSea: (e: any) => void
 }
 
 type photoType = {
@@ -43,7 +42,7 @@ export const Photos = (props: PropsType) => {
                                 </div>
                             )
                         )
-                        : <Main onClickHandlerSea={props.onClickHandlerSea}/>
+                        : <Main/>
                 }
             </div>
         </div>

@@ -1,11 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {APIPhotos} from "../../API/Api";
 
-type PropsType = {
-    onClickHandlerSea: (e: any) => void
-}
 
-export const Main = (props: PropsType) => {
+export const Main = () => {
     const [photosData, setPhotosData] = useState<Array<any>>([])
     const [photos, setPhotos] = useState<Array<any>>([])
     const [current, setCurrent] = useState(0);
@@ -48,7 +45,6 @@ export const Main = (props: PropsType) => {
     }
     return (
         <div>
-            <button onClick={props.onClickHandlerSea}>Sea</button>
             <div>
                 <div>
                     <div>

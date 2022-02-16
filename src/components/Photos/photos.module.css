@@ -1,6 +1,7 @@
 .photosContainer{
     width: 80%;
     margin: auto;
+    padding-top: 70px;
 }
 .photosContent{
     flex-wrap: wrap;

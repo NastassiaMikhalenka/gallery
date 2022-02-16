@@ -1,7 +1,8 @@
 import React, {useEffect, useState,} from 'react';
 import {APIPhotos} from "./API/Api";
 import {Photos} from "./components/Photos/Photos";
-import {Main} from "./components/Main/Main";
+import './App.css'
+import {Form} from "./components/form/form";
 
 
 function App() {
@@ -10,16 +11,12 @@ function App() {
     const [page, setPage] = useState(0);
     const handleChange = (e: any) => {
         setValue(e.target.value)
+        setPage(1);
     }
     const handleSubmit = (e: any) => {
         e.preventDefault();
         setPage(1);
     };
-    const onClickHandlerSea = (e: any) => {
-        e.preventDefault();
-        setValue('sea')
-        setPage(1);
-    }
 
     console.log(photosData)
     useEffect(() => {
@@ -51,12 +48,10 @@ function App() {
 
     return (
         <div className="App">
-            <form>
-                <input onChange={handleChange} type='text'/>
-                <button onClick={handleSubmit}>Search</button>
-            </form>
-            {/*<button onClick={handleSubmitNext}>Next</button>*/}
-            <Photos photosData={photosData} onClickHandlerSea={onClickHandlerSea}/>
+            <header className={'headerContainer'}>
+                <Form handleSubmit={handleSubmit} handleChange={handleChange}/>
+            </header>
+            <Photos photosData={photosData}/>
         </div>
     );
 }
