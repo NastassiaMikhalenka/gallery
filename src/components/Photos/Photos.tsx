@@ -1,6 +1,5 @@
 import React from 'react';
 import classes from "./photos.module.css";
-import {Main} from "../Main/Main";
 
 type PropsType = {
     photosData: Array<photoType>
@@ -42,7 +41,7 @@ export const Photos = (props: PropsType) => {
                                 </div>
                             )
                         )
-                        : <Main/>
+                        : <div><p>Nothing found</p></div>
                 }
             </div>
         </div>

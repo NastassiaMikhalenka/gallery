@@ -6,6 +6,12 @@ import {Form} from "./components/form/form";
 
 
 function App() {
+    useEffect(() => {
+        APIPhotos.searchData('nature', 1).then(response => {
+            setPhotosData(response.data.results)
+        })
+    }, []);
+
     const [value, setValue] = useState('');
     const [photosData, setPhotosData] = useState<Array<any>>([])
     const [page, setPage] = useState(0);
@@ -18,10 +24,8 @@ function App() {
         setPage(1);
     };
 
-    console.log(photosData)
     useEffect(() => {
         APIPhotos.searchData(value, page).then(response => {
-            console.log(response)
             setPhotosData((arrayPh) => {
                 if (value && page === 1) {
                     return response.data.results;
